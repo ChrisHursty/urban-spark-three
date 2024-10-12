@@ -1,0 +1,40 @@
+// Import fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+// Variables
+$black: #313131;
+$white: #ffffff;
+$primary: #0353E0; // Blue
+$secondary: #F97316; // Orange
+$dark-sec: #C45303; // ADA Orange
+$dark-gray: #363636;
+$light-gray: #f4f4f4;
+$light-primary: #3B82F6;
+$dark-primary: #1E3A8A;
+
+$footer-top-color: $primary;
+$footer-bottom-color: $dark-primary;
+
+// Fonts
+$heading: 'Montserrat', sans-serif;
+$sub-heading: 'Montserrat', sans-serif;
+$body: 'Montserrat', sans-serif;
+
+// Base Styles
+@import 'base/reset';
+@import 'base/common';
+@import 'base/grid';
+@import 'base/helpers';
+@import 'base/responsive-fonts';
+
+@import 'base/header';
+@import 'base/footer';
+@import 'base/cta';
+@import 'base/testimonials-slider';
+@import 'base/home-page';
+@import 'base/portfolio-grid.scss';
+@import 'base/hero-title';
+@import 'base/single-portfolio.scss';
+@import 'base/company-ticker.scss';
+@import 'base/archive.scss';
+@import 'base/sidebar.scss';

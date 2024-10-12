@@ -1,0 +1,129 @@
+.home-hero {
+    .row {
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 767px) {
+            flex-direction: column-reverse;
+        }
+
+        .hero-content,
+        .hero-image {
+            @media (max-width: 1179px) {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            img {
+                width: 100%;
+            }
+        }
+
+        
+
+        h1 {
+            color: $light-primary;
+            font-size: 1.2rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+
+            @media (max-width: 767px) {
+                font-size: 1rem;
+            }
+        }
+
+        h2 {
+            font-size: 3.2rem;
+            font-weight: 900;
+
+            @media (max-width: 1080px) {
+                font-size: 2.4rem;
+            }
+
+            @media (max-width: 767px) {
+                font-size: 1.8rem;
+            }
+
+            span {
+                color: $primary;
+                text-transform: capitalize;
+            }
+        }
+
+        .intro {
+            p {
+                color: $dark-gray;
+                font-size: 22px;
+                line-height: 30px;
+                margin-bottom: 20px;
+    
+                @media (max-width: 767px) {
+                    font-size: 1em;
+                }
+            }
+        }
+
+        .button-box {
+            text-align: center;
+        }
+    }
+}
+
+.problem-container {
+    padding: 30px 0;
+
+    @media (max-width: 767px) {
+        padding: 15px;
+    }
+
+    .row {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .problem-image {
+        img {
+            max-width: 220px;
+        }
+
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    .problem-content {
+        color: $white;
+
+        ul {
+            li {
+                font-size: 18px;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.solution-container {
+    padding: 30px 0;
+
+    @media (max-width: 767px) {
+        padding: 15px;
+    }
+
+    .row {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .solution-content {
+        padding-right: 45px;
+
+        @media (max-width: 767px) {
+            padding-right: 0;
+        }
+    }
+}
