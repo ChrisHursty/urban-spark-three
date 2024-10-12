@@ -24,9 +24,10 @@ h2 {
 
 h3 {
 	font-family: $sub-heading;
-	font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 20px}, #{$maxFontSize - 20px});
+	font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 16px}, #{$maxFontSize - 16px});
+	font-weight: 900;
 	line-height: 1.4;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin: 20px 0 10px;
 }
 
@@ -55,6 +56,10 @@ p {
 	font-size: clamp(14px, 16px, 16px);
 	line-height: 1.8;
 	margin-bottom: 16px;
+}
+
+strong {
+	font-weight: 800;
 }
 
 @media screen and (max-width: 768px) {

@@ -67,6 +67,7 @@ figure {
 
 .dark-bg {
     background: linear-gradient(to right, #1E388A, #0353E0);
+    color: $white;
 }
 
 .iso-bg {
@@ -86,7 +87,6 @@ figure {
         z-index: -1;
     }
 }
-
 
 // Buttons
 .spark-btn {

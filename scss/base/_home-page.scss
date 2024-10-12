@@ -127,3 +127,96 @@
         }
     }
 }
+
+.results-container {
+    padding: 30px 0;
+
+    @media (max-width: 767px) {
+        padding: 15px;
+    }
+
+    .row {
+        justify-content: center;
+
+        .col-md-4,
+        .col-md-6 {
+            padding: 0 10px;
+        }
+    }
+
+    .result-icon {
+        width: 100px;
+        margin: 10px auto;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+.action-plan-steps {
+    padding: 30px 0;
+
+    @media (max-width: 767px) {
+        padding: 15px;
+    }
+
+    .row {
+        display: flex;
+        margin-bottom: 50px;
+        align-items: center;
+        justify-content: center;
+
+        .step-content-left,
+        .step-content-right {
+            .step-icon {
+                width: 120px;
+                margin: 10px auto;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            .step-heading {
+                display: flex;
+                align-items: center;
+                justify-content: right;
+
+                .step-number {
+                    align-items: center;
+                    background-color: $secondary; // orange color
+                    border-radius: 50px;
+                    box-shadow: 5px 5px 0px $black; // offset drop shadow
+                    color: white;
+                    display: flex;
+                    font-size: 42px;
+                    font-weight: 900;
+                    height: 60px;
+                    justify-content: center;
+                    margin: 20px;
+                    position: relative;
+                    text-shadow: 5px 5px 0px $black;
+                    width: 60px;
+                }
+
+                h2 {
+                    font-size: 24px;
+                    line-height: 32px;
+                    margin-bottom: 15px;
+                }
+            }
+
+            .step-content {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+        }
+
+        .step-content-left {
+            padding-right: 30px;
+            text-align: right;
+        }
+    }
+}
+

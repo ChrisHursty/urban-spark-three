@@ -96,31 +96,116 @@ get_header();
     </div>
 </section>
 
-<section class="container-fw services-container">
+<!-- Problem -->
+<section class="container-fw results-container dark-bg">
     <div class="container">
         <div class="row">
-            <?php if (have_rows('services')) : ?>
-                <?php while (have_rows('services')) : the_row();
-                    // Your sub fields go here
+            <h2><?php echo the_field('results_heading'); ?></h2>
+        </div>
+    </div>
+    <div class="container">
+    <?php if( have_rows('results_columns') ): ?>
+        <div class="row">
+            <?php 
+            // Get total number of rows (columns)
+            $column_count = count(get_field('results_columns'));
+
+            // Set column class based on the count
+            if ($column_count == 1) {
+                $column_class = 'col-md-8 align-center';
+            } elseif ($column_count == 2) {
+                $column_class = 'col-md-6';
+            } else {
+                $column_class = 'col-md-4';
+            }
+
+            // Loop through repeater
+            while ( have_rows('results_columns') ) : the_row(); ?>
+                <div class="<?php echo esc_attr($column_class); ?>">
+                    <?php 
                     $icon = get_sub_field('icon');
-                    $title = get_sub_field('title');
-                    $description = get_sub_field('description');
-                    $button_text = get_sub_field('button_text');
-                    $button_url = get_sub_field('button_url');
-                ?>
-                    <div class="service-item" style="background-image: url('<?php echo esc_url($icon); ?>');">
-                        <div class="service-content">
-                            <h2 class="service-title"><?php echo esc_html($title); ?></h2>
-                            <p class="service-description"><?php echo esc_html($description); ?></p>
-                            <?php if ($button_url && $button_text) : ?>
-                                <a href="<?php echo esc_url($button_url); ?>" class="learn-more-link"><span><?php echo esc_html($button_text); ?></span></a>
-                            <?php endif; ?>
+                    $heading = get_sub_field('heading');
+                    $content = get_sub_field('content');
+                    ?>
+                    <div class="result-icon">
+                        <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
+                    </div>
+                    <div class="result-heading">
+                        <h3><?php echo esc_html($heading); ?></h3>
+                    </div>
+                    <div class="result-content">
+                        <?php echo wp_kses_post($content); ?>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        </div>
+    <?php endif; ?>
+    </div>
+</section>
+
+<!-- Action Plan -->
+<section class="container-fw action-plan-container iso-bg">
+    <div class="container">
+        <div class="row center-title">
+            <h2><?php echo the_field('action_plan_heading'); ?></h2>
+        </div>
+    </div>
+    <div class="container">
+        <?php if( have_rows('action_plan_steps') ): ?>
+        <div class="action-plan-steps">
+            <?php 
+            $row_number = 0;
+            while ( have_rows('action_plan_steps') ) : the_row(); 
+                $row_number++; // Increment the row number
+                $icon = get_sub_field('icon');
+                $heading = get_sub_field('heading');
+                $content = get_sub_field('content');
+                $image = get_sub_field('image'); // Using ACF image field
+            ?>
+
+            <?php if ($row_number % 2 != 0): // Odd rows ?>
+                <div class="row step-<?php echo esc_attr($row_number); ?>">
+                    <div class="col-md-6 step-content-left">
+                        <div class="step-icon">
+                            <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
+                        </div>
+                        <div class="step-heading">
+                            <div class="step-number"><?php echo esc_html($row_number); ?></div>
+                            <h2><?php echo esc_html($heading); ?></h2>
+                        </div>
+                        <div class="step-content">
+                            <?php echo wp_kses_post($content); ?>
                         </div>
                     </div>
-                <?php endwhile; ?>
-            <?php endif; ?>
+                    <div class="col-md-6 step-image">
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="Step Image" />
+                    </div>
+                </div>
 
+            <?php else: // Even rows ?>
+                <div class="row step-<?php echo esc_attr($row_number); ?>">
+                    <div class="col-md-6 step-image">
+                        <img src="<?php echo esc_url($image['url']); ?>" alt="Step Image" />
+                    </div>
+                    <div class="col-md-6 step-content-right">
+                        <div class="step-icon">
+                            <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt']); ?>" />
+                        </div>
+                        <div class="step-heading">
+                        <div class="step-number"><?php echo esc_html($row_number); ?></div>
+                            <h2><?php echo esc_html($heading); ?></h2>
+                        </div>
+                        <div class="step-content">
+                            <?php echo wp_kses_post($content); ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+            
+            <?php endwhile; ?>
         </div>
+    <?php endif; ?>
+
     </div>
 </section>
 
