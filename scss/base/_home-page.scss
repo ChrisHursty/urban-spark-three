@@ -217,6 +217,19 @@
             padding-right: 30px;
             text-align: right;
         }
+
+        .step-content-right {
+            padding-left: 30px;
+            text-align: left;
+
+            .step-heading {
+                justify-content: left;
+
+                .step-number {
+                    margin: 20px 20px 20px 0;
+                }
+            }
+        }
     }
 }
 

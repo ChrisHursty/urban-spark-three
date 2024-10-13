@@ -82,7 +82,7 @@ figure {
         left: 0;
         right: 0;
         bottom: 0;
-        background: url('../images/iso-bg-pattern.svg') no-repeat center/cover;
+        background: url('../images/iso-bg-pattern.svg') repeat-y top/contain;
         opacity: 0.2; // Set the desired opacity for the SVG
         z-index: -1;
     }
