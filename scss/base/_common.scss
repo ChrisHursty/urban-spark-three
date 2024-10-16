@@ -71,7 +71,7 @@ figure {
 }
 
 .iso-bg {
-    background-color: #fff;
+    background: linear-gradient(to right, #fff, #e8e8e8);
     position: relative;
     z-index: 1;
 
@@ -82,8 +82,9 @@ figure {
         left: 0;
         right: 0;
         bottom: 0;
-        background: url('../images/iso-bg-pattern.svg') repeat-y top/contain;
-        opacity: 0.2; // Set the desired opacity for the SVG
+        background: url('../images/iso-tile-white-bg.svg') repeat;
+        background-size: contain;
+        opacity: 0.2;
         z-index: -1;
     }
 }
