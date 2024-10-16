@@ -14,7 +14,7 @@ get_header();
 $search_query = get_search_query();
 
 // Featured Image and Title for Search Page
-$default_image_url = get_template_directory_uri() . 'dist/images/default-hero-img.png';
+$default_image_url = get_template_directory_uri() . '/dist/images/default-hero-img.webp';
 $background_image_url = $default_image_url; // Using default image for search page
 
 echo '<section class="container-fw hero-title-area" style="background-image: url(' . esc_url($background_image_url) . ');">';

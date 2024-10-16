@@ -11,8 +11,7 @@
     }
 
     .row {
-        border-radius: 10px;
-        background: #363636c2;
+        background: $dark-primary;
         flex-direction: column;
         padding: 30px;
 
@@ -61,7 +60,6 @@
         .genre-link {
             a {
                 background-color: $primary;
-                border-radius: 5px;
                 display: inline-block;
                 font-family: $sub-heading;
                 margin: 15px 10px;

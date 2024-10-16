@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Home Page
+ * Template Name: Home Page 2025
  *
  * @package US Three
  */
@@ -25,11 +25,10 @@ get_header();
                 ?>
             </div>
             <div class="button-box">
-                <!-- Calendly link widget begin -->
-                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-                <a href="" class="spark-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chrishurst'});return false;"><span>BOOK MY DISCOVERY CALL</span></a>
-                <!-- Calendly link widget end -->
+            <?php $calendly_code = get_field('calendly_code', 'option');
+                if ($calendly_code) {
+                    echo $calendly_code;
+                };?>
             </div>
         </div>
         <div class="col-md-6 hero-image">
@@ -210,6 +209,14 @@ get_header();
 </section>
 
 <div class="container-fw testimonials-container dark-bg">
+<div class="container">
+        <div class="row center-title">
+            <?php $testimonials_title = get_field('testimonials_title', 'option');
+            if ($testimonials_title) {
+                echo '<h2>' . esc_html($testimonials_title) . '</h2>';
+            } ?>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <?php
@@ -277,7 +284,10 @@ get_header();
 <section class="container-fw faq-section iso-bg">
     <div class="container">
         <div class="row center-title">
-            <h2>Frequently Asked Questions</h2>
+            <?php $faq_title = get_field('faq_title', 'option');
+            if ($faq_title) {
+                echo '<h2>' . esc_html($faq_title) . '</h2>';
+            } ?>
         </div>
     </div>
     <div class="container">
@@ -323,14 +333,13 @@ get_header();
                 </div>
                 
                 <div class="button-box">
-                <!-- Calendly link widget begin -->
-                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-                <a href="" class="spark-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chrishurst'});return false;"><span>BOOK MY DISCOVERY CALL</span></a>
-                <!-- Calendly link widget end -->
+                <?php $calendly_code = get_field('calendly_code', 'option');
+                    if ($calendly_code) {
+                        echo $calendly_code;
+                    };?>
+                </div>
             </div>
-            </div>
-            <div class="col-md-6">
+            <div class="col-md-6 align-center">
                 <?php 
                     $calendly_content = get_field('calendly_code');
                     if ($calendly_content) {

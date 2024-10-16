@@ -44,7 +44,7 @@ function us_three_theme_setup() {
     add_image_size('portfolio_slider', 810, 810, true); // true for hard crop mode
 }
 
-add_action( 'after_setup_theme', 'us_three_theme_setup' );
+add_action('after_setup_theme', 'us_three_theme_setup');
 
 /**
  * Enqueue scripts and styles.

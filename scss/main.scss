@@ -4,13 +4,13 @@
 // Variables
 $black: #313131;
 $white: #ffffff;
-$primary: #0353E0; // Blue
-$secondary: #F97316; // Orange
+$primary: var(--primary-color);
+$secondary: var(--secondary-color);
 $dark-sec: #C45303; // ADA Orange
 $dark-gray: #363636;
 $light-gray: #f4f4f4;
-$light-primary: #3B82F6;
-$dark-primary: #1E3A8A;
+$light-primary: var(--light-primary-color);
+$dark-primary: var(--dark-primary-color);
 
 $footer-top-color: $primary;
 $footer-bottom-color: $dark-primary;

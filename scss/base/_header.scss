@@ -91,8 +91,6 @@
         }
     }
 
-    
-
     .main-navigation {
         display: flex;
         align-items: center;
@@ -102,19 +100,19 @@
 
         @media (min-width: 768px) {
             .current-menu-item a {
-                color: $dark-gray;
+                color: $secondary;
             }
 
-            .hire-btn.current-menu-item a {
+            .cta-header-btn.current-menu-item a {
                 color: $white;
             }
         }
 
-        //Button
-        .hire-btn {
-            border: 4px solid $white;
-            border-radius: 8px;
-            padding: 5px 15px;
+        // CTA Button
+        .cta-header-btn {
+            background-color: $secondary;
+            border-radius: 25px;
+            padding: 10px 20px;
             transition: background-color 0.5s ease;
 
             &:hover {
@@ -172,13 +170,14 @@
 
                 a {
                     color: $white;
-                    font-weight: bold;
+                    font-weight: 900;
                     text-decoration: none;
                     text-transform: uppercase;
                     transition: color 0.5s ease;
 
                     &:hover {
-                        color: $dark-gray;
+                        color: $dark-primary;
+                        text-decoration: underline;
                     }
 
                     @media (max-width: 768px) {

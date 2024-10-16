@@ -18,7 +18,7 @@ get_header(); ?>
 <?php
 // Initialize variables
 $post_id            = get_the_ID();
-$default_image_url  = get_template_directory_uri() . '/dist/images/default-hero-img.png'; // Default image URL
+$default_image_url  = get_template_directory_uri() . '//dist/images/default-hero-img.webp'; // Default image URL
 $featured_image_url = get_the_post_thumbnail_url($post_id, 'full'); // Attempt to get the featured image URL
 $category_terms     = get_the_terms($post_id, 'category'); // Get categories
 

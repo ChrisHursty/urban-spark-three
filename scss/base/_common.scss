@@ -66,12 +66,12 @@ figure {
 }
 
 .dark-bg {
-    background: linear-gradient(to right, #1E388A, #0353E0);
+    background: linear-gradient(to right, $light-primary, $dark-primary);
     color: $white;
 }
 
 .iso-bg {
-    background: linear-gradient(to right, #fff, #e8e8e8);
+    background: linear-gradient(to right, $white, $light-gray);
     position: relative;
     z-index: 1;
 
@@ -82,7 +82,6 @@ figure {
         left: 0;
         right: 0;
         bottom: 0;
-        background: url('../images/iso-tile-white-bg.svg') repeat;
         background-size: contain;
         opacity: 0.2;
         z-index: -1;
@@ -126,31 +125,8 @@ figure {
     background-color: $white;
 }
 
-// Ninja Form Button
-.nf-form-content input[type=submit] {
-    border: 4px solid #cc1b1f;
-    background-color: #fff;
-    color: #cc1b1f;
-    border-radius: 8px;
-    display: inline-block;
-    font-family: $heading, sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 10px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: background-color .5s ease;
-}
-
-.nf-form-content input[type=submit]:hover {
-    border: 4px solid #cc1b1f;
-    background-color: #cc1b1f;
-    color: #fff;
-}
-
 .content-bg {
     background-color: #fff;
-    border-radius: 10px;
     box-shadow: 2px 4px 20px #848484;
     margin-top: -60px;
     margin-bottom: 40px;

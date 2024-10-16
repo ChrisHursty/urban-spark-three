@@ -21,7 +21,30 @@ defined('ABSPATH') || exit;
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- Title tag -->
+    <title><?php wp_title('|', true, 'right'); ?></title>
+    
     <?php wp_head(); ?>
+    
+    <?php
+    $primary_color = get_field('primary_color', 'option');
+    $secondary_color = get_field('secondary_color', 'option');
+    $light_primary_color = get_field('light_primary_color', 'option');
+    $dark_primary_color = get_field('dark_primary_color', 'option');
+    $background_image = get_field('isometric_bg_image', 'option');
+    ?>
+    <style>
+    :root {
+        --primary-color: <?php echo esc_attr($primary_color); ?>;
+        --secondary-color: <?php echo esc_attr($secondary_color); ?>;
+        --light-primary-color: <?php echo esc_attr($light_primary_color); ?>;
+        --dark-primary-color: <?php echo esc_attr($dark_primary_color); ?>;
+    }
+    .iso-bg::before {
+        background: url('<?php echo esc_url($background_image); ?>') repeat; /* Dynamic Image */
+    }
+    </style>
 </head>
 
 <body <?php body_class(); ?>>

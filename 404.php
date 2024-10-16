@@ -15,7 +15,7 @@ get_header();
     $featured_image_url = get_the_post_thumbnail_url($post_id, 'full');
 
     // Define a default image URL
-    $default_image_url = get_template_directory_uri() . 'dist/images/default-hero-img.png';
+    $default_image_url = get_template_directory_uri() . '/dist/images/default-hero-img.webp';
 
     // Use the featured image if available, otherwise use the default
     $background_image_url = $featured_image_url ? $featured_image_url : $default_image_url;
