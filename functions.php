@@ -137,13 +137,8 @@ function ccs_custom_css() {
           color: $hero_btn_bg_color !important;
       }
 
-      .cta-button {
-          border: 4px solid $cta_btn_text_color !important;
-      }
-
       .cta-button:hover {
           background-color: $cta_btn_text_color !important;
-          border: 4px solid $cta_btn_text_color !important;
       }
       .cta-button:hover span {
           color: $cta_btn_bg_color !important;

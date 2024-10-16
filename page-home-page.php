@@ -61,7 +61,7 @@ get_header();
             <div class="col-md-9 problem-content">
                 <?php 
                     $problem_content = get_field('problem_content');
-                    if ($hero_intro) {
+                    if ($problem_content) {
                         echo wp_kses_post($problem_content);
                     }
                 ?>
@@ -77,7 +77,7 @@ get_header();
             <div class="col-md-7 solution-content">
                 <?php 
                     $solution_content = get_field('solution_content');
-                    if ($hero_intro) {
+                    if ($solution_content) {
                         echo wp_kses_post($solution_content);
                     }
                 ?>
@@ -209,11 +209,143 @@ get_header();
     </div>
 </section>
 
+<div class="container-fw testimonials-container dark-bg">
+    <div class="container">
+        <div class="row">
+            <?php
+            // Query the Testimonials CPT
+            $args = array(
+                'post_type'      => 'testimonials',
+                'posts_per_page' => 6,
+                'orderby'        => 'date',
+                'order'          => 'ASC',
+            );
+
+            $testimonials_query = new WP_Query($args);
+
+            if( $testimonials_query->have_posts() ) : ?>
+                <div class="testimonials-section">
+                    <?php while( $testimonials_query->have_posts() ) : $testimonials_query->the_post(); ?>
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <?php
+                                // ACF Fields
+                                $headline = get_field('headline');
+                                $video = get_field('video');
+                                $headshot = get_the_post_thumbnail_url();
+                                
+                                if ($video): ?>
+                                    <div class="testimonial-video">
+                                        <video width="100%" controls>
+                                            <source src="<?php echo esc_url($video['url']); ?>" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="testimonial-text">
+                                        <h3><?php echo esc_html($headline); ?></h3>
+                                        <div class="testimonial-body"><?php the_content(); ?></div>
+                                    </div>
+                                <?php endif; ?>
+
+                                <div class="testimonial-meta">
+                                    <div class="testimonial-headshot">
+                                        <img src="<?php echo esc_url($headshot); ?>" alt="<?php the_title(); ?>" class="headshot">
+                                    </div>
+                                    <div class="testimonial-info">
+                                        <h4 class="testimonial-name"><?php the_title(); ?></h4>
+                                        <div class="testimonial-stars">
+                                            <i class="fa fa-star" style="color: #FFD700;"></i>
+                                            <i class="fa fa-star" style="color: #FFD700;"></i>
+                                            <i class="fa fa-star" style="color: #FFD700;"></i>
+                                            <i class="fa fa-star" style="color: #FFD700;"></i>
+                                            <i class="fa fa-star" style="color: #FFD700;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
+            <?php wp_reset_postdata(); ?>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ's -->
+<section class="container-fw faq-section iso-bg">
+    <div class="container">
+        <div class="row center-title">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row faq-container">
+            <?php
+            $args = array(
+                'post_type'      => 'faq',
+                'posts_per_page' => -1,
+                'orderby'        => 'date',
+                'order'          => 'ASC',
+            );
+            $faq_query = new WP_Query($args);
+
+            if( $faq_query->have_posts() ) :
+                while( $faq_query->have_posts() ) : $faq_query->the_post(); ?>
+                    <div class="faq-item">
+                        <div class="faq-question" data-toggle="faq">
+                            <h3><?php the_title(); ?></h3>
+                            <i class="fa fa-plus"></i> <!-- Plus icon for collapsed state -->
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            <?php the_content(); ?>
+                        </div>
+                    </div>
+                <?php endwhile;
+            endif;
+            wp_reset_postdata(); ?>
+        </div>
+    </div>
+</section>
+<section class="calendly-cta-container container-fw dark-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 content">
+                <h2><?php echo the_field('cta_heading') ;?></h2>
+                <div class="cta-content">
+                <?php 
+                    $cta_content = get_field('cta_content');
+                    if ($cta_content) {
+                        echo wp_kses_post($cta_content);
+                    }
+                ?>
+                </div>
+                
+                <div class="button-box">
+                <!-- Calendly link widget begin -->
+                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                <a href="" class="spark-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/chrishurst'});return false;"><span>BOOK MY DISCOVERY CALL</span></a>
+                <!-- Calendly link widget end -->
+            </div>
+            </div>
+            <div class="col-md-6">
+                <?php 
+                    $calendly_content = get_field('calendly_code');
+                    if ($calendly_content) {
+                        echo wp_kses_post($calendly_content);
+                    }
+                ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call To Action -->
 <section class="cta">
     <?php get_template_part('template-parts/call-to-action'); ?>
 </section>
-<section class="company-ticker">
-    <?php get_template_part('template-parts/company-ticker'); ?>
-</section>
+
 <?php
 get_footer();

@@ -3,22 +3,14 @@
     padding: 60px 0;
     position: relative;
     text-align: center;
-
-    .cta-container {
-        background-image: url('../images/footer-logo-stamp.svg');
-        background-position: 0 50%;
-        background-repeat: no-repeat;
-        background-size: 300px 300px;
-    }
     
     .cta-heading {
+        font-size: 24px;
         margin-bottom: 15px;
         text-align: center;
     }
 
     .cta-text {
-        background-color: #f4f4f49e;
-        border-radius: 20px;
         font-size: 1.1em;
         line-height: 1.6;
         margin-bottom: 30px;
@@ -27,10 +19,10 @@
     }
     
     .cta-button {
-        border-radius: 8px;
+        border-radius: 50px;
         display: inline-block;
         padding: 10px 20px;
-        font-weight: 700;
+        font-weight: 900;
         font-size: 16px;
         font-family: $heading;
         text-decoration: none;

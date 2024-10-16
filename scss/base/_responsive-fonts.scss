@@ -3,6 +3,7 @@ html {
 }
 
 /* Define variables for minimum, preferred, and maximum font sizes */
+$smallFontSize: 16px;
 $minFontSize: 20px;
 $preferredFontSize: 40px;
 $maxFontSize: 48px;
@@ -75,7 +76,7 @@ strong {
 	}
 
 	h3 {
-		font-size: clamp(#{$minFontSize}, #{$preferredFontSize - 22px}, #{$maxFontSize - 22px});
+		font-size: clamp(#{$smallFontSize}, #{$preferredFontSize - 24px}, #{$maxFontSize - 24px});
 		line-height: 1.5;
 		/* Set your desired line height for H3 */
 	}

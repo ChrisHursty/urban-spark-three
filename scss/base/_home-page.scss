@@ -154,12 +154,18 @@
     }
 }
 
-.action-plan-steps {
-    padding: 30px 0;
-
+.action-plan-container {
     @media (max-width: 767px) {
         padding: 15px;
     }
+
+    .row {
+        justify-content: center;
+    }
+}
+
+.action-plan-steps {
+    padding: 30px 0;
 
     .row {
         display: flex;
@@ -183,6 +189,10 @@
                 align-items: center;
                 justify-content: right;
 
+                @media (max-width: 767px) {
+                    justify-content: center;
+                }
+
                 .step-number {
                     align-items: center;
                     background-color: $secondary; // orange color
@@ -195,6 +205,7 @@
                     height: 60px;
                     justify-content: center;
                     margin: 20px;
+                    min-width: 60px;
                     position: relative;
                     text-shadow: 5px 5px 0px $black;
                     width: 60px;
@@ -216,14 +227,27 @@
         .step-content-left {
             padding-right: 30px;
             text-align: right;
+
+            @media (max-width: 767px) {
+                padding-right: 0;
+                text-align: left;
+            }
         }
 
         .step-content-right {
             padding-left: 30px;
             text-align: left;
 
+            @media (max-width: 767px) {
+                padding-left: 0;
+            }
+
             .step-heading {
                 justify-content: left;
+
+                @media (max-width: 767px) {
+                    justify-content: center;
+                }
 
                 .step-number {
                     margin: 20px 20px 20px 0;
@@ -231,5 +255,89 @@
             }
         }
     }
+
+    .step-2, .step-4, .step-6 {
+        @media (max-width: 767px) {
+            flex-direction: column-reverse;
+        }
+    }
 }
 
+.faq-section {
+    padding: 30px 0;
+
+    @media (max-width: 767px) {
+        padding: 15px;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .faq-item {
+        border-bottom: 1px solid $secondary;
+        padding: 15px;
+        cursor: pointer;
+        width: 100%;
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h3 {
+                margin: 0;
+            }
+
+            i {
+                font-size: 1.5rem;
+                transition: transform 0.3s ease;
+                color: $secondary;
+            }
+        }
+
+        .faq-answer {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            display: none;
+        }
+
+        &.open .faq-answer {
+            display: block;
+        }
+
+        &.open .faq-question i {
+            transform: rotate(180deg); // Rotate to minus
+            content: "\f068"; // Font Awesome minus icon
+        }
+    }
+}
+
+.calendly-cta-container {
+    padding: 30px 0;
+
+    @media (max-width: 767px) {
+        padding: 15px;
+    }
+
+    .row {
+        align-items: center;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+
+            h2, .cta-content, .button-box {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

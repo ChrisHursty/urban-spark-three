@@ -24,38 +24,56 @@ document.addEventListener('DOMContentLoaded', function () {
             overlay.classList.toggle('is-active');
         });
     });
-
 });
 
-// Testimonials Slider
-jQuery(document).ready(function($) {
-    // Testimonials Slider
-    $(".testimonial-carousel").owlCarousel({
-        items: 2,
-        loop: true,
-        margin: 20,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-                nav: false,
-            },
-            600: {
-                items: 2,
-                nav: false,
-            },
-            1000: {
-            items: 2,
-            nav: true,
-            dots: true,
-        }
+// Testimonials Home Page Video
+document.addEventListener('DOMContentLoaded', function() {
+    const playIcons = document.querySelectorAll('.play-icon');
 
-        },
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true
+    playIcons.forEach(function(icon) {
+        icon.addEventListener('click', function() {
+            const video = this.nextElementSibling; // The video element
+            video.style.display = 'block'; // Show the video
+            video.play(); // Play the video
+            this.style.display = 'none'; // Hide the play button
+        });
     });
+});
 
+// FAQ's
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(function(item) {
+        const question = item.querySelector('.faq-question');
+
+        question.addEventListener('click', function() {
+            // Close any open FAQ
+            faqItems.forEach(function(faq) {
+                if (faq !== item && faq.classList.contains('open')) {
+                    faq.classList.remove('open');
+                    faq.querySelector('.faq-answer').style.display = 'none';
+                    faq.querySelector('.faq-question i').classList.replace('fa-minus', 'fa-plus');
+                }
+            });
+
+            // Toggle current FAQ
+            if (item.classList.contains('open')) {
+                item.classList.remove('open');
+                item.querySelector('.faq-answer').style.display = 'none';
+                item.querySelector('.faq-question i').classList.replace('fa-minus', 'fa-plus');
+            } else {
+                item.classList.add('open');
+                item.querySelector('.faq-answer').style.display = 'block';
+                item.querySelector('.faq-question i').classList.replace('fa-plus', 'fa-minus');
+            }
+        });
+    });
+});
+
+
+// Owl Carousels
+jQuery(document).ready(function($) {
     // Companies Slider
     $('.logo-carousel').owlCarousel({
         loop: true,
