@@ -14,17 +14,13 @@ defined('ABSPATH') || exit;
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    
-    <!-- Title tag -->
-    <title><?php wp_title('|', true, 'right'); ?></title>
-    
+    <meta name="description" content="<?php echo esc_attr(get_field('meta_description', 'option')); ?>">
     <?php wp_head(); ?>
     
     <?php

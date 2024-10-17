@@ -16,6 +16,8 @@ require_once get_template_directory() . '/inc/theme-options.php';
 require_once get_template_directory() . '/inc/cpts.php';
 // Widgets
 require get_template_directory() . '/inc/widgets.php';
+// Navwalker
+require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 function us_three_theme_setup() {
     // Add theme support for Automatic Feed Links
