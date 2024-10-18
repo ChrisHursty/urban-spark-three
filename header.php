@@ -38,7 +38,7 @@ defined('ABSPATH') || exit;
         --dark-primary-color: <?php echo esc_attr($dark_primary_color); ?>;
     }
     .iso-bg::before {
-        background: url('<?php echo esc_url($background_image); ?>') repeat; /* Dynamic Image */
+        background: url('<?php echo esc_url($background_image); ?>') repeat-y top/cover;
     }
     </style>
 </head>

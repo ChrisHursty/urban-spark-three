@@ -29,6 +29,5 @@ jQuery(document).ready(function($) {
         image: {
             titleSrc: 'title' // Attribute for image captions
         }
-        // other Magnific-Popup options as needed
     });
 });
