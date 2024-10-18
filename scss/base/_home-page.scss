@@ -335,3 +335,20 @@
         }
     }
 }
+
+// Marketing Landing Page
+.page-template-page-marketing-landing-page {
+    header {
+        .button-box {
+            margin: -25px 0px 0px 0px;
+            p {
+                margin: 0;
+            }
+        }
+        @media (max-width: 767px) {
+            .button-box {
+                display: none;
+            }
+        }
+    }
+}

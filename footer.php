@@ -71,6 +71,15 @@ defined('ABSPATH') || exit;
             </div>
         </div>
     </div>
+    <?php
+    $calendly_button_code = get_field('calendly_button_code', 'option');
+    ?>
+    <!-- Sticky Calendly Button for Mobile -->
+    <?php if ($calendly_button_code): ?>
+        <div class="calendly-sticky-btn">
+            <?php echo ($calendly_button_code); ?>
+        </div>
+    <?php endif; ?>
 </footer>
 
 <?php wp_footer(); ?>
